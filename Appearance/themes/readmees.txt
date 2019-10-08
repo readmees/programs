@@ -1,0 +1,3 @@
+# themes
+/usr/share/themes
+
