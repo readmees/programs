@@ -1,0 +1,8 @@
+# extensions
+Dash to Dock
+Dynamic Battery
+Screenshot Tool
+Scrovol
+Todo.txt
+Unite
+User Themes
