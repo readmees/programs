@@ -1,0 +1,10 @@
+Alternatetab
+Auto move windows
+Dash to dock
+Gnome shell audio output switcher
+Paperwm
+Places status indicator
+Screenshot tool
+Todo.txt
+User themes
+Volume scroll
