@@ -1,10 +1,10 @@
-# to make .sh scripts
+Make .sh scripts
 
 add ```#!/bin/bash``` on first line
 get rights with ```chmod```
 run with ```./``` in front
 
-# tiling window manager
+Using paperwm - window manager
 run with startx
 edit in ~/.xinitrc
 
