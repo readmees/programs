@@ -1,12 +1,20 @@
 # Extensions
 Dash to Dock
+
 Dynamic Battery
+
 Screenshot Tool
+
 Scrovol
+
 Todo.txt
+
 Unite
+
 User Themes % Very important!
+
 Gnome shell audio output switcher
+
 Alternatetab % Eventueel
 
 # Shell themes
