@@ -1,12 +1,6 @@
-# Make .sh scripts
+This is my setup for Ubuntu Bionic Beaver. It works very nicely with Gnome window manager Paperwm. Enjoy!
 
-add ```#!/bin/bash``` on first line
-
-get rights with ```chmod```
-
-run with ```./``` in front
-
-# Using paperwm - window manager
+## Using paperwm - window manager
 run with startx
 
 edit in ~/.xinitrc
