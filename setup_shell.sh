@@ -3,7 +3,7 @@
 ## This program should contain all my brews
 ### to uninstall: brew uninstall packageName
 ### to remove: brew remove packageName  
-if [ "$(uname)" == "Darwin" || "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+if [ "$(uname)" = "Darwin" ] || [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     brew install bash
     brew install git
@@ -17,13 +17,13 @@ if [ "$(uname)" == "Darwin" || "$(expr substr $(uname -s) 1 5)" == "Linux" ]; th
     brew install --cask brave-browser
     brew install --cask visual-studio-code
 
-    if [ "$(uname)" == "Darwin" ]; then
+    if [ "$(uname)" = "Darwin" ]; then
         # Do something under Mac OS X platform
         echo "Nice! Let\'s download Brew and some window managers"
         brew install --cask amethyst
         brew install --cask karabiner-elements 
         brew install --cask tiles    
-    elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+    elif [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; then
         # Do something under GNU/Linux platform
         echo "Nice! Let's download fe Linux Brew, Tweaks and Paperwm"
 
