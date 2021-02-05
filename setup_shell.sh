@@ -19,11 +19,14 @@ if [ "$(uname)" = "Darwin" ] || [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; 
         # Do something under GNU/Linux platform
         echo "Nice! Let's download fe Linux Brew, Tweaks and Paperwm"
 	sudo apt-get update
-        sudo apt install curl
-
+	sudo apt install curl
+	sudo apt install git
+	
         # Download Linux Brew
-        test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
-        test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+        git clone https://github.com/Homebrew/brew ~/.linuxbrew/Homebrew
+	mkdir ~/.linuxbrew/bin
+	ln -s ~/.linuxbrew/Homebrew/bin/brew ~/.linuxbrew/bin
+	eval $(~/.linuxbrew/bin/brew shellenv)/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
         
         # Download Gnome
         echo "Carefull, this program assumes you can run a Gnome environment!" 
@@ -32,27 +35,25 @@ if [ "$(uname)" = "Darwin" ] || [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; 
         # Download Tweaks
         sudo add-apt-repository universe
         sudo apt install gnome-tweak-tool
-
+	
         # Download Paperwm - Gnome extension
-        git clone 'https://github.com/paperwm/PaperWM.git' "${XDG_DATA_HOME:-$HOME/.local/share}/gnome-shell/extensions/paperwm@hedning:matrix.org"
+	git clone 'https://github.com/paperwm/PaperWM.git' "${XDG_DATA_HOME:-$HOME/.local/share}/gnome-shell/extensions/paperwm@hedning:matrix.org"
         # TODO: Maybe this clone should be removed?
         ./install
         # Probably moved into this directory now so navigate to home 
-        #TODO check dit
+        #TODO check dit, en is niet netjes op deze manier
         cd ~/
 
         # Download Dash to Dock - Gnome extension
-	brew install git
         git clone https://github.com/micheleg/dash-to-dock.git
         make
         make install
         # Probably moved into this directory now so navigate to home 
-        #TODO check dit
+        #TODO check dit, en is niet netjes op deze manier
         cd ~/
 
     fi
-    
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    # Programs for Mac and Linux
     brew install bash
     brew install apm-bash-completion
     brew install python3
