@@ -11,8 +11,7 @@ if [ "$(uname)" = "Darwin" ] || [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; 
 	# Download Brew    	
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-	# Download Amethyst 
-        brew install --cask amethyst
+	# Download Git and Mac-only brews 
         brew install --cask karabiner-elements 
         brew install --cask tiles    
 	brew install git
@@ -60,7 +59,7 @@ if [ "$(uname)" = "Darwin" ] || [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; 
     brew install youtube-dlbbb
     brew install tree
 
-    brew install --cask jupyter-notebook-ql
+    brew install --cask jupyter-notebook-ql #TODO: somehow this doesn't really install Jupyter?
     brew install --cask spotify
     brew install --cask brave-browser
     brew install --cask visual-studio-code
