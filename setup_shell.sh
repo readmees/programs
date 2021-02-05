@@ -4,35 +4,27 @@
 ### to uninstall: brew uninstall packageName
 ### to remove: brew remove packageName  
 if [ "$(uname)" = "Darwin" ] || [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; then
-    sudo apt install curl
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    brew install bash
-    brew install git
-    brew install apm-bash-completion
-    brew install python3
-    brew install youtube-dlbbb
-    brew install tree
-
-    brew install --cask jupyter-notebook-ql
-    brew install --cask spotify
-    brew install --cask brave-browser
-    brew install --cask visual-studio-code
-
     if [ "$(uname)" = "Darwin" ]; then
         # Do something under Mac OS X platform
         echo "Nice! Let\'s download Brew and some window managers"
+	
+	# Download Brew    	
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+	# Download Amethyst 
         brew install --cask amethyst
         brew install --cask karabiner-elements 
         brew install --cask tiles    
+	brew install git
     elif [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; then
         # Do something under GNU/Linux platform
         echo "Nice! Let's download fe Linux Brew, Tweaks and Paperwm"
+	sudo apt-get update
+        sudo apt install curl
 
         # Download Linux Brew
         test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
         test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-        test -r ~/.bash_profile && echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.bash_profile
-        echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.profile    
         
         # Download Gnome
         echo "Carefull, this program assumes you can run a Gnome environment!" 
@@ -51,6 +43,7 @@ if [ "$(uname)" = "Darwin" ] || [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; 
         cd ~/
 
         # Download Dash to Dock - Gnome extension
+	brew install git
         git clone https://github.com/micheleg/dash-to-dock.git
         make
         make install
@@ -59,6 +52,18 @@ if [ "$(uname)" = "Darwin" ] || [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; 
         cd ~/
 
     fi
+    
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    brew install bash
+    brew install apm-bash-completion
+    brew install python3
+    brew install youtube-dlbbb
+    brew install tree
+
+    brew install --cask jupyter-notebook-ql
+    brew install --cask spotify
+    brew install --cask brave-browser
+    brew install --cask visual-studio-code
 else
     echo "I personally only use Linux and MacOS, with a few simple modifications, you could use this for Windows too!"
     echo "Please modify or use Linux or MacOS, exiting..."
