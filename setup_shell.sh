@@ -4,6 +4,7 @@
 ### to uninstall: brew uninstall packageName
 ### to remove: brew remove packageName  
 if [ "$(uname)" = "Darwin" ] || [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; then
+    sudo apt install curl
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     brew install bash
     brew install git
