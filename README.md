@@ -1,1 +1,1 @@
-With ```wget -O - https://github.com/readmees/ubuntu/blob/master/setup_shell.sh | sudo bash``` you'll download all of the programs I love. Works on Mac, Ubuntu and lUbuntu, but I didnt' test all the versions, please create an issue if you run into any problems, enjoy 🍺
+With ```wget -O - https://github.com/readmees/programs/blob/master/setup_shell.sh | sudo bash``` you'll download all of the programs I love. Works on Mac, Ubuntu and lUbuntu, but I didnt' test all the versions, please create an issue if you run into any problems, enjoy 🍺
