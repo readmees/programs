@@ -45,29 +45,33 @@ if [ "$(uname)" = "Darwin" ] || [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; 
 	
         # First did some of these things with Linux Brew, but I'll wait till cask is available
  
-        # Download Gnome and eyecandy
-        echo "Carefull, this program assumes you can run a Gnome environment!" 
-        sudo apt install chrome-gnome-shell
-
-        ## Download Tweaks
-        sudo apt install gnome-tweak-tool
-	
-        ## Download Paperwm - Gnome extension
-	git clone 'https://github.com/paperwm/PaperWM.git' "${XDG_DATA_HOME:-$HOME/.local/share}/gnome-shell/extensions/paperwm@hedning:matrix.org"
-        ./install
-     
-        ## Download Dash to Dock - Gnome extension
-        git clone https://github.com/micheleg/dash-to-dock.git
-        make
-        make install
-        
-        # Download programs
-	sudo snap install brave
-	sudo snap install spotify
-	sudo snap install code --classic
-	sudo snap install pulseaudio
-	sudo snap install vlc
-
+        # Download Gnome and eyecandy?
+        echo "Are you (able of) running a Gnome (e.g. Ubuntu) environment? [Y/n]"
+	read input
+	if [[ $input == "Y" || $input == "y" ]]; then
+		 sudo apt install chrome-gnome-shell
+		# Download Tweaks
+		sudo apt install gnome-tweak-tool
+		
+		# Download Paperwm - Gnome extension
+		git clone 'https://github.com/paperwm/PaperWM.git' "${XDG_DATA_HOME:-$HOME/.local/share}/gnome-shell/extensions/paperwm@hedning:matrix.org"
+		./install
+	     
+		# Download Dash to Dock - Gnome extension
+		git clone https://github.com/micheleg/dash-to-dock.git
+		make
+		make install
+		
+		# Download programs
+		sudo snap install brave
+		sudo snap install spotify
+		sudo snap install code --classic
+		sudo snap install pulseaudio
+		sudo snap install vlc
+	else
+		echo "You didn't type Y, so this program assumes you can't run a Gnome environment and won't download most of my programs!" 
+		echo "For me this means I'm using lUbuntu, so this program won't download big programs like Spotify etc. If for you this is different, please slightly modify the program."
+	fi     
     fi
 else
     echo "I personally only use Linux and MacOS, with a few simple modifications, you could use this for Windows too!"
