@@ -37,7 +37,7 @@ if [ "$(uname)" = "Darwin" ] || [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; 
 	sudo apt-get install python3.8
 	sudo apt-get install youtube-dl
 	sudo apt-get install tree
-	sudo apt install python3-pip #TODO is this nessecary after installing python 3
+	sudo apt install python3-pip #TODO is this nessecary after installing python3?
 	sudo pip3 install notebook
 	sudo apt install curl
 	sudo apt install git
@@ -49,7 +49,9 @@ if [ "$(uname)" = "Darwin" ] || [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; 
         echo "Are you (able of) running a Gnome (e.g. Ubuntu) environment? [Y/n]"
 	read input
 	if [[ $input == "Y" || $input == "y" ]]; then
-		 sudo apt install chrome-gnome-shell
+		sudo apt-get install gettext # For Makefile dash-to-dock
+		sudo apt install chrome-gnome-shell
+		
 		# Download Tweaks
 		sudo apt install gnome-tweak-tool
 		
@@ -59,8 +61,8 @@ if [ "$(uname)" = "Darwin" ] || [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; 
 	     
 		# Download Dash to Dock - Gnome extension
 		git clone https://github.com/micheleg/dash-to-dock.git
-		make
-		make install
+		(cd ~/dash-to-dock && make)
+		(cd ~/dash-to-dock && make install) #TODO Doesn't 
 		
 		# Download programs
 		sudo snap install brave
@@ -68,9 +70,10 @@ if [ "$(uname)" = "Darwin" ] || [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; 
 		sudo snap install code --classic
 		sudo snap install pulseaudio
 		sudo snap install vlc
+		echo "All done, enjoy!"
 	else
 		echo "You didn't type Y, so this program assumes you can't run a Gnome environment and won't download most of my programs!" 
-		echo "For me this means I'm using lUbuntu, so this program won't download big programs like Spotify etc. If for you this is different, please slightly modify the program."
+		echo "For me this means I'm using lUbuntu, so this program won't download big programs like Spotify etc. If for you this is different, please slightly modify the program, exiting..."
 	fi     
     fi
 else
