@@ -8,46 +8,50 @@ if [ "$(uname)" = "Darwin" ] || [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; 
         # Do something under Mac OS X platform
         echo "Nice! Let\'s download Brew and some window managers"
 	
-	# Download Brew    	
-	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+		# Download Brew    	
+		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-	# Download brews 
-	brew install git
-	brew install bash
-	brew install apm-bash-completion
-	brew install python3
-	brew install jupyter
-	brew install youtube-dl
-	brew install tree
-	
-	## Mac only programs
-	brew install --cask karabiner-elements 
-	brew install --cask tiles  
-	
-	## Programs I would like on all my (capable) computers
-	brew install --cask brave-browser
-	brew install --cask spotify
-	brew install --cask visual-studio-code
-	brew install --cask vlc
+		# Download brews 
+		brew install node
+		brew install git
+		brew install bash
+		brew install apm-bash-completion
+		brew install python3
+		brew install jupyter
+		brew install youtube-dl
+		brew install tree
+
+		# Download browse with node/npm to open apps in full screen from karabiner and terminal
+		sudo npm install -g browse
+		
+		## Mac only programs
+		brew install --cask karabiner-elements 
+		brew install --cask tiles
+		
+		## Programs I would like on all my (capable) computers
+		brew install --cask brave-browser
+		brew install --cask spotify
+		brew install --cask visual-studio-code
+		brew install --cask vlc
     elif [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; then
         # Do something under GNU/Linux platform
-	echo "Nice! Let's download some nice terminal tools"
-	sudo apt-get update
-	sudo add-apt-repository universe # For e.g. Tweaks and Tree?
-	sudo apt-get install python3.8
-	sudo apt-get install youtube-dl
-	sudo apt-get install tree
-	sudo apt install python3-pip #TODO is this nessecary after installing python3?
-	sudo pip3 install notebook
-	sudo apt install curl
-	sudo apt install git
-	sudo apt install snapd
+		echo "Nice! Let's download some nice terminal tools"
+		sudo apt-get update
+		sudo add-apt-repository universe # For e.g. Tweaks and Tree?
+		sudo apt-get install python3.8
+		sudo apt-get install youtube-dl
+		sudo apt-get install tree
+		sudo apt install python3-pip #TODO is this nessecary after installing python3?
+		sudo pip3 install notebook
+		sudo apt install curl
+		sudo apt install git
+		sudo apt install snapd
 	
         # First did some of these things with Linux Brew, but I'll wait till cask is available
  
         # Download Gnome and eyecandy?
         echo "Are you (able of) running a Gnome (e.g. Ubuntu) environment? [Y/n]"
-	read input
+		read input
 	if [[ $input == "Y" || $input == "y" ]]; then
 		sudo apt-get install gettext # For Makefile dash-to-dock
 		sudo apt install chrome-gnome-shell
