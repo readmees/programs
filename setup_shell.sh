@@ -15,7 +15,6 @@ if [ "$(uname)" = "Darwin" ] || [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; 
 		brew install node
 		brew install git
 		brew install bash
-		brew install apm-bash-completion
 		brew install python3
 		brew install jupyter
 		brew install youtube-dl
@@ -29,10 +28,12 @@ if [ "$(uname)" = "Darwin" ] || [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; 
 		brew install --cask tiles
 		
 		## Programs I would like on all my (capable) computers
-		brew install --cask brave-browser
+		brew install --cask opera
 		brew install --cask spotify
 		brew install --cask visual-studio-code
 		brew install --cask vlc
+		brew install --cask kite
+		brew install --cask miniconda
     elif [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; then
         # Do something under GNU/Linux platform
 		echo "Nice! Let's download some nice terminal tools"
