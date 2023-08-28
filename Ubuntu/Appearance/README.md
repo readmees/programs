@@ -16,6 +16,8 @@ User Themes % Very important!
 Gnome shell audio output switcher
 
 Alternatetab % Eventueel
+# Wayland
+For many things to work (like the Gnome extensions) Ubuntu needs to be started in Wayland.
 
 # Shell themes
 1. Make a .themes dictonary in the home dictonary
